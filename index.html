@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Government Scheme Application Form</title>
     <!-- Include AWS SDK -->
-    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.12.min.js"></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1206.0.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -127,9 +127,9 @@
     <script>
         // Initialize AWS S3
         AWS.config.update({
-            accessKeyId: 'YOUR_ACCESS_KEY_ID',
-            secretAccessKey: 'YOUR_SECRET_ACCESS_KEY',
-            region: 'YOUR_AWS_REGION'
+            accessKeyId: 'AKIAW3MEBQHGS7R37P7E',
+            secretAccessKey: 'aeUaoa/a7m2UGUCl5K/GQuT9m+K4xFjzSUKcCS+2',
+            region: 'us-east-1'
         });
 
         const s3 = new AWS.S3();
@@ -140,7 +140,7 @@
             const formData = new FormData(event.target);
             const data = JSON.stringify(Object.fromEntries(formData.entries()));
             const params = {
-                Bucket: 'your-bucket-name',
+                Bucket: 'formdatacc',
                 Key: `application-data-${Date.now()}.json`, // Save data as a JSON file
                 Body: data,
                 ContentType: 'application/json'
@@ -158,7 +158,5 @@
             });
         });
     </script>
-    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1206.0.min.js"></script>
-
 </body>
 </html>
